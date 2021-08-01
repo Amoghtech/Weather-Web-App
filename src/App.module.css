@@ -1,6 +1,36 @@
-.container{
-    width:300px;
-    height:400px;
-    background-color:rgb(14, 135, 248);
-    border-radius: 15px;
+.container {
+  width: 300px;
+  height: 400px;
+  background-image: linear-gradient(
+    to right top,
+    #3684f8,
+    #00a7ff,
+    #1ec5ff,
+    #6ddfff,
+    #acf7ff
+  );
+  border-radius: 15px;
+}
+
+.container img {
+  height: 50px;
+  width: 50px;
+}
+
+.back {
+  background-image: linear-gradient(
+    to right top,
+    #70a8fc,
+    #4ebcf7,
+    #1ec5ff,
+    #6ddfff,
+    #acf7ff
+  );
+
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
+  height: 70%;
+  display: flex;
+align-items: center;
+justify-content: center;
 }

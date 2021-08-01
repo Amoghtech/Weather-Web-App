@@ -1,0 +1,14 @@
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input input {
+  width: 200px;
+  margin: 10px 7px;
+}
+
+.input button {
+  padding: 3px 8px;
+}

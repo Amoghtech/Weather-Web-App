@@ -1,26 +1,30 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialstate = {
-  icon: "",
-  name: "",
-  region: "",
-  country: "",
-  temp: "",
-  wind: "",
-  humidity: "",
-  precipitation: "",
-  error: "",
+  details: {
+    icon: '',
+    name: '',
+    region: '',
+    country: '',
+    temp: '',
+    wind: '',
+    humidity: '',
+    precipitation: '',
+    code:""
+  },
+  error: '',
 };
 
 const cityslice = createSlice({
-  name: "city",
+  name: 'city',
   initialState: initialstate,
   reducers: {
     setstate(state, action) {
-      state = action.payload;
+      state.details = action.payload;
+
     },
-    seterror(state, action) {
-      state.error = action.payload;
+    seterrorr(state, action) {
+      state.error = action.payload.err;
     },
   },
 });

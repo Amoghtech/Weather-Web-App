@@ -1,22 +1,45 @@
-import {useSelector, useDispatch} from "react-redux";
-import {inputsliceactions} from "../store/input";
-import {fetchdata} from "../store/citydetaithunks";
+import { useSelector, useDispatch } from 'react-redux';
+import { inputsliceactions } from '../store/input';
+import { fetchdetail } from '../store/citydetailthunks';
+import { useEffect, useState } from 'react';
+import styles from './Input.module.css';
+
 const Input = () => {
   const input = useSelector((state) => state.input);
   const dispatch = useDispatch();
+  // const inputref = useRef();
+  const [inp, setinp] = useState('');
 
-  const changehandler = (e) => {
-    dispatch(inputsliceactions.setvalue(e.target.value));
-  };
+  useEffect(() => {
+    const i = setTimeout(() => {
+      dispatch(inputsliceactions.setloading(false));
+      console.log('set');
+    }, 2000);
+    return () => {
+      console.log('iunset');
+      dispatch(inputsliceactions.setloading(true));
 
+      clearTimeout(i);
+    };
+  }, [inp,dispatch]);
+
+  // const changehandler = (e) => {
+  // };
   const clickhandler = () => {
-    fetchdata(input.value);
+    
+    dispatch(inputsliceactions.setvalue(inp));
+    dispatch(fetchdetail(input.value));
   };
 
   return (
-    <div>
-      <input type="text" value={input.value} onChange={changehandler} />
-      <button onClick={clickhandler}></button>
+    <div className={styles['input']}>
+      <input
+        type='text'
+        onChange={(e) => {
+          setinp(e.target.value);
+        }}
+      />
+      <button onClick={clickhandler}>Search</button>
     </div>
   );
 };
