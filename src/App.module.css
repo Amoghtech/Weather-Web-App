@@ -9,8 +9,8 @@
     #6ddfff,
     #acf7ff
   );
-  transition: all 0.6s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
+color:black;
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -75,6 +75,8 @@
     #51514a,
     #62625b
   );
+color:white;
+
 }
 
 .elements {
