@@ -9,7 +9,7 @@ export const fetchdetail = (name) => {
 
     const fetchdata = async () => {
       const res = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=e0b53a0e6f624151a90110255210108&q=${name}`
+        `https://api.weatherapi.com/v1/current.json?key=e0b53a0e6f624151a90110255210108&q=${name}`
       );
       console.log(res);
 

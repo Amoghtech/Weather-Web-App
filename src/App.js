@@ -46,7 +46,7 @@ function App() {
       >
         {/* <div className={styles['back']}> */}
         {value.length === 0 && !loading && (
-          <p className={styles.msg}>Enter some City Name on Press submit</p>
+          <p className={styles.msg}>Enter some City Name and Press submit</p>
         )}
         {loading && <Loading />}
         {error.length > 0 && !loading && <p>{error}</p>}
@@ -54,7 +54,7 @@ function App() {
           <>
             {' '}
             <div className={styles['details']}></div>
-            <img src={icon} />
+            <img alt="" src={icon} />
             <p className={styles.temp}>{temp}°C</p>
             <p style={{ margin: '27px 0px',fontSize:'19px' }}>{name}</p>
             <div className={styles.row}>
