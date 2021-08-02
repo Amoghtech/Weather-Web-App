@@ -8,6 +8,8 @@ const inputslice = createSlice({
   },
   reducers: {
     setvalue(state, action) {
+      
+      console.log('py',action.payload);
       state.value = action.payload;
     },
     setloading(state,action) {

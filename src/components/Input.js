@@ -4,12 +4,12 @@ import { fetchdetail } from '../store/citydetailthunks';
 import { useEffect, useState } from 'react';
 import styles from './Input.module.css';
 
-const Input = () => {
+const Input = ({ toggle }) => {
   const input = useSelector((state) => state.input);
   const dispatch = useDispatch();
   // const inputref = useRef();
   const [inp, setinp] = useState('');
-
+  console.log(inp);
   useEffect(() => {
     const i = setTimeout(() => {
       dispatch(inputsliceactions.setloading(false));
@@ -21,14 +21,16 @@ const Input = () => {
 
       clearTimeout(i);
     };
-  }, [inp,dispatch]);
+  }, [inp, dispatch]);
 
   // const changehandler = (e) => {
   // };
   const clickhandler = () => {
-    
     dispatch(inputsliceactions.setvalue(inp));
-    dispatch(fetchdetail(input.value));
+    // setTimeout(() => {
+
+    dispatch(fetchdetail(inp));
+    // }, 2000);
   };
 
   return (
@@ -38,8 +40,14 @@ const Input = () => {
         onChange={(e) => {
           setinp(e.target.value);
         }}
+        className={`${toggle === true ? styles.dark : ''}`}
       />
-      <button onClick={clickhandler}>Search</button>
+      <button
+        className={`${styles.button}  ${toggle === true ? styles.dark : ''}`}
+        onClick={clickhandler}
+      >
+        Search
+      </button>
     </div>
   );
 };

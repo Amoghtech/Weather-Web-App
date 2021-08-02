@@ -3,6 +3,7 @@ import { inputsliceactions } from './input';
 import { citydetailsliceactions } from './citydetail';
 
 export const fetchdetail = (name) => {
+  console.log('me',name)
   return async (dispatch) => {
     dispatch(inputsliceactions.setloading(true));
 
